@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.e.myapplication.databinding.BindingEventHandler" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_toolbar_main"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="16dp"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.5"
+                    android:onClick="@{click::toolbarOnclick}"
+                    app:popupTheme="@style/AppTheme.PopupOverlay"
+                    app:titleTextAppearance="@style/text_size_title_toolbar_16_sp"
+                    app:titleTextColor="@android:color/darker_gray" />
+
+                <ImageButton
+                    style="@style/ImageButtonSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/content_description_settings"
+                    android:onClick="@{click::settings}"
+                    android:src="@drawable/ic_settings" />
+            </androidx.cardview.widget.CardView>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:navGraph="@navigation/home_navigation" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="?android:windowBackground"
+            app:itemIconTint="@color/selector_bottom_navigation"
+            app:itemTextColor="@color/selector_bottom_navigation"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+            app:menu="@menu/bottom_nav_menu" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

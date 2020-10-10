@@ -1,0 +1,2 @@
+include ':App', ':App Consumer'
+rootProject.name = 'Submission 5 FAA'

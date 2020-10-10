@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AppConsumer</string>
+    <string name="tab_text_1">Movie</string>
+    <string name="tab_text_2">Tv Show</string>
+    <string name="tidak_ada_bahasa_indonesia" translatable="false">Kami belum memiliki kilasan singkat dalam bahasa Indonesia. Bantu kami menambahkannya...</string>
+</resources>

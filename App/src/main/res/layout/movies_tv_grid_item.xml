@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.e.myapplication.db.themoviedb.dto.ResultData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_poster_list"
+            setimage_detail="@{data.posterPath}"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="@string/content_descriptionimage"
+            android:scaleType="fitXY"
+            tools:src="@android:color/darker_gray" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/pb_poster_list"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:contentDescription="@string/app_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_poster_list"
+            android:layout_marginStart="@dimen/list_content_margin_start"
+            android:layout_marginTop="7dp"
+            android:maxLines="1"
+            android:text="@{data.title != null ? data.title : data.originalName}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_release_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title_list"
+            android:layout_marginStart="@dimen/list_content_margin_start"
+            app:release_date="@{data.releaseDate != null ? data.releaseDate : data.firstAirDate}"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_verview_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_release_list"
+            android:layout_marginStart="@dimen/list_content_margin_start"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:overview="@{data.overview}"
+            tools:text="@tools:sample/lorem/random" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_user_score_percent_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_verview_list"
+            android:layout_marginStart="@dimen/list_content_margin_start"
+            android:layout_marginTop="10dp"
+            android:text="@{data.voteAverage.toString()}"
+            tools:text="Score : 100%" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/rb_user_score_list"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_user_score_percent_list"
+            android:layout_marginStart="@dimen/list_content_margin_start"
+            android:numStars="10"
+            android:rating="@{data.voteAverage.floatValue()}"
+            android:stepSize="0.1"
+            tools:rating="5.5" />
+    </RelativeLayout>
+</layout>

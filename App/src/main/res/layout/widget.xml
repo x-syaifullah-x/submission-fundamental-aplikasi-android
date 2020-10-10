@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_widget_favorite"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:weightSum="10"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <StackView
+            android:id="@+id/stack_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9.3"
+            android:loopViews="true" />
+
+        <TextView
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/tidak_ada_data"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="@string/widget_favorite"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+</FrameLayout>

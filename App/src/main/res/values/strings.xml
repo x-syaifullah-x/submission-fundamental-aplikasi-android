@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">app</string>
+    <string name="movies">Movie</string>
+    <string name="tv_show">Tv Show</string>
+    <string name="title">Title</string>
+    <string name="release">Release</string>
+    <string name="overview">Overview</string>
+    <string name="user_score">User Score</string>
+
+    <string name="key_language" translatable="false">language phone</string>
+    <string name="tidak_ada_bahasa_indonesia" translatable="false">Kami belum memiliki kilasan singkat dalam bahasa Indonesia. Bantu kami menambahkannya...</string>
+
+    <string name="title_activity_settings">Settings</string>
+    <string name="language_setting">Language Setting</string>
+    <string name="set_language">Set Language</string>
+    <string name="content_description_settings">Setting</string>
+    <string name="img_detail__content_description">Poster film</string>
+    <string name="laguage">en</string>
+    <string name="original_langugage">Original Langugage</string>
+    <string name="bottom_ok_dialog_error">OK</string>
+    <string name="error_message_dialog_error">Error</string>
+    <string name="content_descriptionimage">Image</string>
+    <string name="favorite">Favorite</string>
+    <string name="tab_1_movies">Movies</string>
+    <string name="tab_2_tv_show">Tv Show</string>
+    <string name="dir_file_image" translatable="false">%s/image_data/%s</string>
+    <string name="add_to_favorite">Add to favorite %s</string>
+    <string name="message_add_to_favorite">Do you want to add %s to favorite %s</string>
+    <string name="negative_button_cancel_favorite">Cancel</string>
+    <string name="message_data_ready">Data %s available</string>
+    <string name="positive_botton_ok_favorite">OK</string>
+    <string name="message_sucsses_add_to_favorite">Successfully added data to favorites %s</string>
+    <string name="delete_data_favorite">Delete</string>
+    <string name="message_delete_data_favorite">Do you want to delete %s</string>
+    <string name="confirm_delete_data_favorite">Yes</string>
+    <string name="cencel_delete_data_favorite">No</string>
+    <string name="search">Search %s </string>
+    <string name="message_image_failure">Images failed to load, data failed to be added to favorite %s</string>
+    <string name="tidak_ada_data">No Data</string>
+    <string name="widget_favorite">My Favorite</string>
+    <string name="pencarian">Search</string>
+    <string name="greeting">the film application is waiting for you</string>
+    <string name="new_release_to_day">new release today</string>
+    <string name="refresh">update to see changes</string>
+    <string name="notifikasi_daily_reminder">notifikasi daily reminder</string>
+    <string name="notifikasi_release_reminder">notifikasi release reminder</string>
+    <string name="on">aktif</string>
+    <string name="off">non aktif</string>
+    <string name="no_data">Data %1$s not found %2$s</string>
+    <string name="no_connection">\nNo Network Connection \nBad Network\n</string>
+    <string name="layout">Layout</string>
+    <string name="no_data_result">No Data</string>
+    <string name="search_result">Result</string>
+</resources>

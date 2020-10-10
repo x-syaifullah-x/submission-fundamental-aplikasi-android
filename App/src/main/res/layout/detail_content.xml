@@ -1,0 +1,157 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.e.myapplication.db.themoviedb.dto.ResultData" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:fitsSystemWindows="true"
+        android:minHeight="500dp"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".ui.detail.DetailActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movie_title"
+                style="@style/detail_title_left"
+                android:text="@string/title"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_movie_title_content"
+                style="@style/detail_content_left"
+                android:text="@{data.title != null ? data.title : data.originalName}"
+                app:layout_constraintTop_toBottomOf="@+id/movie_title"
+                tools:ignore="MissingConstraints"
+                tools:text="content title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movie_reliase"
+                style="@style/detail_title_left"
+                android:text="@string/release"
+                app:layout_constraintTop_toBottomOf="@+id/tv_movie_title_content"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_movie_reliase_content"
+                style="@style/detail_content_left"
+                app:layout_constraintTop_toBottomOf="@+id/movie_reliase"
+                app:release_date="@{data.releaseDate != null ? data.releaseDate : data.firstAirDate}"
+                tools:ignore="MissingConstraints"
+                tools:text="@tools:sample/date/ddmmyy" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/original_language"
+                style="@style/detail_title_left"
+                android:text="@string/original_langugage"
+                app:layout_constraintTop_toBottomOf="@+id/tv_movie_reliase_content"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_original_language"
+                style="@style/detail_content_left"
+                android:text="@{data.originalLanguage}"
+                android:textAllCaps="true"
+                app:layout_constraintTop_toBottomOf="@+id/original_language"
+                tools:ignore="MissingConstraints"
+                tools:text="ID" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movie_user_score"
+                style="@style/detail_title_left"
+                android:text="@string/user_score"
+                app:layout_constraintTop_toBottomOf="@+id/tv_original_language"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rb_movie_user_score_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:numStars="10"
+                android:rating="@{data.voteAverage.floatValue()}"
+                app:layout_constraintEnd_toStartOf="@+id/tv_overview_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movie_user_score"
+                tools:rating="5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_movie_user_score_content"
+                style="@style/detail_content_left"
+                android:text="@{data.voteAverage.toString()}"
+                app:layout_constraintTop_toBottomOf="@+id/rb_movie_user_score_content"
+                tools:ignore="MissingConstraints"
+                tools:text="99 %" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_movie_1"
+                setimage_detail="@{data.posterPath}"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/img_detail__content_description"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/img_movie_2"
+                app:layout_constraintStart_toEndOf="@+id/original_language"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@android:color/holo_red_light" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_movie_2"
+                setimage_detail="@{data.backdropPath}"
+                android:layout_width="115dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/img_detail__content_description"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@android:color/holo_red_dark" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/pb_img_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:theme="?android:attr/progressBarStyleSmall"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/movie_overview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/original_language"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movie_overview"
+                style="@style/detail_right"
+                android:text="@string/overview"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/img_movie_1"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_overview_content"
+                style="@style/detail_right"
+                app:layout_constraintTop_toBottomOf="@+id/movie_overview"
+                app:overview="@{data.overview}"
+                tools:ignore="MissingConstraints"
+                tools:text="@tools:sample/lorem/random" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

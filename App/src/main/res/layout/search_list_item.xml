@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.e.myapplication.db.themoviedb.dto.ResultData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="2dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cv_img_search"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/content_descriptionimage"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/list_content_margin_start"
+            android:text="@{data.title != null ? data.title : data.originalName}"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cv_img_search"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:background="?colorPrimaryDark"
+            app:layout_constraintStart_toEndOf="@+id/cv_img_search"
+            app:layout_constraintTop_toBottomOf="@+id/cv_img_search" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

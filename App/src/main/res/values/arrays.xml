@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="layout_mode_entries">
+        <item>Card Mode</item>
+        <item>Gird Mode</item>
+    </string-array>
+
+    <string-array name="layout_mode_entry_values">
+        <item>card</item>
+        <item>gird</item>
+    </string-array>
+
+</resources>
