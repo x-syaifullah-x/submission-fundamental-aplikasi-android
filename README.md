@@ -27,11 +27,7 @@
         - setel bahasa
 - App Consumer
     - Membaca dan menampil kan list favorite yang ada di app dengan content provider
-    
-![screenshot](https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153117.png)
 
-![screenshot](https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153124.png)
-
-![screenshot](https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153137.png)
-
-![screenshot](https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153142.png)
+<div align="center">
+    <img src="https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153142.png" width="400px"</img> 
+</div>
