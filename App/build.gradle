@@ -9,12 +9,12 @@ def IMAGE_URL_W185 = '"' + IMAGE_URL_W185 + '"' ?: '"Define your IMAGE_URL!"'
 def IMAGE_URL_ORIGINAL = '"' + IMAGE_URL_ORIGINAL + '"' ?: '"Define your IMAGE_URL_ORIGINAL!"'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "30.0.2"
     defaultConfig {
         applicationId "com.e.myapplication"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.DetailFragment.runner.AndroidJUnitRunner"
