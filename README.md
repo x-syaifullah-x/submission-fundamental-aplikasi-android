@@ -29,10 +29,9 @@
     - Membaca dan menampil kan list favorite yang ada di app dengan content provider
 
 
-        Screenshoot
 <div align="center">
-    <img src="https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153117.png" width="200px"</img> 
-    <img src="https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153124.png" width="200px"</img> 
-    <img src="https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153137.png" width="200px"</img> 
-    <img src="https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153142.png" width="200px"</img> 
+    <img src="https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153117.png" width="180px"</img> 
+    <img src="https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153124.png" width="180px"</img> 
+    <img src="https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153137.png" width="180px"</img> 
+    <img src="https://github.com/x-syaifullah-x/Fundamental-Aplikasi-Android/blob/submission_5/screenshots/Screenshot_20201122-153142.png" width="180px"</img> 
 </div>
