@@ -17,6 +17,8 @@
         - Favorite
     - Widget
     - Reminder
+        - Release to day
+        - Return to App
     - Menggunakan ContentProvider sebagai mekanisme untuk mengakses data dari satu aplikasi ke aplikasi lain
     - Setelan
         - layout mode
