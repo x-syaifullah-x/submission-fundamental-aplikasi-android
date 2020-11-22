@@ -12,7 +12,7 @@ public class Search extends BaseActivity<SearchBinding> {
     public static final String DATA_EXTRA = "DATA_EXTRA";
 
     @Override
-    protected int resLayoutActivity() {
+    protected int layoutRes() {
         return R.layout.search;
     }
 

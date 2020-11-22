@@ -13,16 +13,17 @@ import androidx.navigation.fragment.NavHostFragment;
 import java.util.List;
 
 public abstract class BaseActivity<ActivityBinding extends ViewDataBinding> extends AppCompatActivity {
-    protected abstract int resLayoutActivity();
+    protected abstract int layoutRes();
 
     protected ActivityBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, resLayoutActivity());
+        binding = DataBindingUtil.setContentView(this, layoutRes());
     }
 
+    /* Forward onActivityResult to fragment */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

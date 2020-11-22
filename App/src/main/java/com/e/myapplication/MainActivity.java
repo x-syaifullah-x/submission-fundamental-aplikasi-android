@@ -24,7 +24,7 @@ import static com.e.myapplication.reminder.ReleaseToday.isFirst;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> implements NavController.OnDestinationChangedListener {
     @Override
-    protected int resLayoutActivity() {
+    protected int layoutRes() {
         return R.layout.activity_main;
     }
 

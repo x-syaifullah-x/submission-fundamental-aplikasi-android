@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.e.myapplication.R;
 import com.e.myapplication.adapter.MovieTvAdapter;
 import com.e.myapplication.adapter.OnItemClick;
-import com.e.myapplication.adapter.ViewHolderMovieTv;
+import com.e.myapplication.adapter.ViewHolderTv;
 import com.e.myapplication.base.BaseFragment;
-import com.e.myapplication.databinding.MoviesTvshowBinding;
+import com.e.myapplication.databinding.TvShowBinding;
 import com.e.myapplication.db.themoviedb.dto.ResultData;
 import com.e.myapplication.ui.dialog.DialogErrorFragment;
 
@@ -29,7 +29,7 @@ import static androidx.navigation.Navigation.findNavController;
 import static com.e.myapplication.R.layout.movies_tv_card_item;
 import static com.e.myapplication.ui.prefs.Settings.SettingsFragment.KEY_LAYOUT_MODE;
 
-public class MovieTvFragment extends BaseFragment<MoviesTvshowBinding> implements OnItemClick<ViewHolderMovieTv, ResultData> {
+public class MovieTvFragment extends BaseFragment<TvShowBinding> implements OnItemClick<ViewHolderTv, ResultData> {
     private static NavDestination destination;
     private final String STAT_SCROLL_POSITION_MOVIES = "STAT_SCROLL_POSITION_MOVIES";
     private final String STAT_SCROLL_POSITION_TV_SHOW = "STAT_SCROLL_POSITION_TV";
@@ -41,7 +41,7 @@ public class MovieTvFragment extends BaseFragment<MoviesTvshowBinding> implement
 
     @Override
     protected int resFragmentLayout() {
-        return R.layout.movies_tvshow;
+        return R.layout.tv_show;
     }
 
     @Override
@@ -55,7 +55,7 @@ public class MovieTvFragment extends BaseFragment<MoviesTvshowBinding> implement
 
         binding.rv.setHasFixedSize(true);
         binding.rv.setLayoutManager(layoutMode == movies_tv_card_item ? new LinearLayoutManager(context) : new GridLayoutManager(context, 2));
-        MovieTvAdapter adapter = new MovieTvAdapter(layoutMode, ViewHolderMovieTv.class, new ArrayList<>(), this);
+        MovieTvAdapter adapter = new MovieTvAdapter(layoutMode, ViewHolderTv.class, new ArrayList<>(), this);
         binding.rv.setAdapter(adapter);
 
         new ViewModelProvider(this).get(MovieTvViewModel.class)
@@ -112,18 +112,15 @@ public class MovieTvFragment extends BaseFragment<MoviesTvshowBinding> implement
     }
 
     @Override
-    public void onItemClick(ViewHolderMovieTv viewHolder, ResultData data, int position) {
+    public void onItemClick(ViewHolderTv viewHolder, ResultData data, int position) {
         viewHolder.itemView.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             bundle.putParcelable("data" /* key argument detail fragment */, data);
-            switch (destination.getId()) {
-                case R.id.navigation_movies:
-                    findNavController(binding.getRoot()).navigate(R.id.action_moviesFragment_to_detailFragment, bundle);
-                    break;
-                case R.id.navigation_tv_show:
-                    findNavController(binding.getRoot()).navigate(R.id.action_tvShowFragment_to_detailFragment, bundle);
-                    break;
-            }
+            int id = destination.getId();
+            if (id == R.id.navigation_movies) {
+                findNavController(binding.getRoot()).navigate(R.id.action_moviesFragment_to_detailFragment, bundle);
+            } else if (id == R.id.navigation_tv_show)
+                findNavController(binding.getRoot()).navigate(R.id.action_tvShowFragment_to_detailFragment, bundle);
         });
     }
 }

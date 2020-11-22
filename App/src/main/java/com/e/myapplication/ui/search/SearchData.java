@@ -21,7 +21,7 @@ import com.e.myapplication.adapter.FavoriteAdapter;
 import com.e.myapplication.adapter.MovieTvAdapter;
 import com.e.myapplication.adapter.OnItemClick;
 import com.e.myapplication.adapter.ViewHolderFavorite;
-import com.e.myapplication.adapter.ViewHolderMovieTv;
+import com.e.myapplication.adapter.ViewHolderTv;
 import com.e.myapplication.databinding.SearchInDataBinding;
 import com.e.myapplication.db.room.MappingHelper;
 import com.e.myapplication.db.themoviedb.dto.ResultData;
@@ -37,7 +37,7 @@ import static android.text.TextUtils.isEmpty;
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
-public class SearchData extends Fragment implements OnItemClick<ViewHolderMovieTv, ResultData>, OnLoadData {
+public class SearchData extends Fragment implements OnItemClick<ViewHolderTv, ResultData>, OnLoadData {
     static final String TYPE = "MOVIE_TV_FAVORITE";
     static final String DATA_EXTRA = "DATA_EXTRA";
     private SearchInDataBinding binding;
@@ -45,7 +45,7 @@ public class SearchData extends Fragment implements OnItemClick<ViewHolderMovieT
     private Runnable runnable;
     private MovieTvAdapter adapter;
     private FavoriteAdapter favoriteAdapter;
-    private Handler handler = new Handler();
+    private final Handler handler = new Handler();
     private String type;
 
 
@@ -74,7 +74,7 @@ public class SearchData extends Fragment implements OnItemClick<ViewHolderMovieT
             favoriteAdapter = new FavoriteAdapter(R.layout.favorite_list_item, ViewHolderFavorite.class, new ArrayList<>());
             binding.rv.setAdapter(favoriteAdapter);
         } else {
-            adapter = new MovieTvAdapter(R.layout.search_list_item, ViewHolderMovieTv.class, new ArrayList<>(), this);
+            adapter = new MovieTvAdapter(R.layout.search_list_item, ViewHolderTv.class, new ArrayList<>(), this);
             binding.rv.setAdapter(adapter);
         }
 
@@ -134,7 +134,7 @@ public class SearchData extends Fragment implements OnItemClick<ViewHolderMovieT
     }
 
     @Override
-    public void onItemClick(ViewHolderMovieTv viewHolder, ResultData resultData, int position) {
+    public void onItemClick(ViewHolderTv viewHolder, ResultData resultData, int position) {
         if (resultData != null)
             viewHolder.itemView.setOnClickListener(v ->
                     searchView.setQuery(!isEmpty(resultData.toString()) ? resultData.getTitle() : resultData.getOriginalName(), true));

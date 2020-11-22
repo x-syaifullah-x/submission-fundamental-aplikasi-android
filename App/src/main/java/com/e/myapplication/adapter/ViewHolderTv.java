@@ -11,12 +11,12 @@ import com.e.myapplication.databinding.MoviesTvGridItemBinding;
 import com.e.myapplication.databinding.SearchListItemBinding;
 import com.e.myapplication.db.themoviedb.dto.ResultData;
 
-public class ViewHolderMovieTv extends RecyclerView.ViewHolder {
+public class ViewHolderTv extends RecyclerView.ViewHolder {
     private MoviesTvCardItemBinding cardItemBinding;
     private MoviesTvGridItemBinding gridItemBinding;
     private SearchListItemBinding searchListItemBinding;
 
-    public ViewHolderMovieTv(@NonNull View itemView) {
+    public ViewHolderTv(@NonNull View itemView) {
         super(itemView);
     }
 

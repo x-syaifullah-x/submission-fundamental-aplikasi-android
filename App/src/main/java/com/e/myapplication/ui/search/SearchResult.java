@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.e.myapplication.R;
 import com.e.myapplication.adapter.MovieTvAdapter;
-import com.e.myapplication.adapter.ViewHolderMovieTv;
+import com.e.myapplication.adapter.ViewHolderTv;
 import com.e.myapplication.base.BaseActivity;
 import com.e.myapplication.databinding.SearchResultBinding;
 import com.e.myapplication.ui.movie_tv.MovieTvViewModel;
@@ -23,7 +23,7 @@ import static java.util.Objects.requireNonNull;
 public class SearchResult extends BaseActivity<SearchResultBinding> {
 
     @Override
-    protected int resLayoutActivity() {
+    protected int layoutRes() {
         return R.layout.search_result;
     }
 
@@ -35,7 +35,7 @@ public class SearchResult extends BaseActivity<SearchResultBinding> {
 
         setSupportActionBar(binding.toolbar);
         binding.rv.setLayoutManager(new GridLayoutManager(this, 2));
-        MovieTvAdapter adapter = new MovieTvAdapter(R.layout.movies_tv_grid_item, ViewHolderMovieTv.class, new ArrayList<>(), null);
+        MovieTvAdapter adapter = new MovieTvAdapter(R.layout.movies_tv_grid_item, ViewHolderTv.class, new ArrayList<>(), null);
         binding.rv.setAdapter(adapter);
 
         if (!requireNonNull(getIntent().getStringExtra(DATA_EXTRA)).equals("favorite")) {
