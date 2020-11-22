@@ -23,5 +23,5 @@
         - on/off release reminder
         - on/off daily reminder
         - setel bahasa
-- App Consumemer
+- App Consumer
     - Membaca dan menampil kan list favorite yang ada di app dengan content provider
