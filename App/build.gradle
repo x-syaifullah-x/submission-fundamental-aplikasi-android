@@ -41,15 +41,15 @@ android {
         implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
         implementation 'androidx.legacy:legacy-support-v4:1.0.0'
         implementation "com.google.android.material:material:$material_version"
-        implementation "androidx.navigation:navigation-fragment-ktx:2.3.2"
-        implementation "androidx.navigation:navigation-ui-ktx:2.3.2"
+        implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+        implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
 
-        implementation 'androidx.recyclerview:recyclerview:1.1.0'
+        implementation 'androidx.recyclerview:recyclerview:1.2.0'
         implementation 'androidx.cardview:cardview:1.0.0'
         implementation 'androidx.preference:preference:1.1.1'
 
         implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-        implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+        implementation "androidx.lifecycle:lifecycle-common-java8:2.3.1"
 
         implementation 'com.google.code.gson:gson:2.8.6'
         implementation 'com.squareup.okhttp3:okhttp:4.9.0'
