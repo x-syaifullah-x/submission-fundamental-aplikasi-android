@@ -18,7 +18,7 @@ class ReminderNotification {
     static final String CHANNEL_NAME_RELEASE_TO_DAY_REMINDER = "Release To Day Reminder";
     private static final String GROUP_ID_DAILY_REMINDER = "ID_DAILY_REMINDER_01";
     private static final String GROUP_NAME_DAILY_REMINDER = "Daily Reminder";
-    private NotificationManagerCompat notificationManager;
+    private final NotificationManagerCompat notificationManager;
 
     ReminderNotification(Context context) {
         notificationManager = NotificationManagerCompat.from(context);
@@ -27,10 +27,10 @@ class ReminderNotification {
                 notificationManager.createNotificationChannelGroup(new NotificationChannelGroup(GROUP_ID_DAILY_REMINDER, GROUP_NAME_DAILY_REMINDER));
     }
 
-    void showNotification(int id, String chanelName, Builder notification) {
+    void showNotification(int id, String channelName, Builder notification) {
         if (SDK_INT >= O) {
-            notification.setChannelId(chanelName);
-            notificationManager.createNotificationChannel(new NotificationChannel(chanelName, chanelName, IMPORTANCE_DEFAULT));
+            notification.setChannelId(channelName);
+            notificationManager.createNotificationChannel(new NotificationChannel(channelName, channelName, IMPORTANCE_DEFAULT));
         }
         notificationManager.notify(id, notification.build());
     }

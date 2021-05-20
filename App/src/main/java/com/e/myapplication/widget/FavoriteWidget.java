@@ -48,8 +48,8 @@ public class FavoriteWidget extends AppWidgetProvider {
             action.putExtra(EXTRA_APPWIDGET_ID, appWidgetId);
             action.setData(parse(intent.toUri(URI_INTENT_SCHEME)));
 
-            PendingIntent pendingInten = getBroadcast(context, 0, action, FLAG_UPDATE_CURRENT);
-            views.setPendingIntentTemplate(R.id.stack_view, pendingInten);
+            PendingIntent pendingIntent = getBroadcast(context, 0, action, FLAG_UPDATE_CURRENT);
+            views.setPendingIntentTemplate(R.id.stack_view, pendingIntent);
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
     }
