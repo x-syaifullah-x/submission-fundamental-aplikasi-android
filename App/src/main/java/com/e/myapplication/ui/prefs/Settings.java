@@ -55,7 +55,7 @@ public class Settings extends AppCompatActivity {
         private static void dailyReminder(Preference preference) {
             preference.setOnPreferenceChangeListener((preferences, newValue) -> {
                 new Daily().setRepeatingAlarm(preferences.getContext(), ((boolean) newValue));
-                toasReminder(preference.getContext(), preference.getContext().getString(R.string.notifikasi_daily_reminder), newValue);
+                toasReminder(preference.getContext(), preference.getContext().getString(R.string.notification_daily_reminder), newValue);
                 return true;
             });
         }
@@ -63,7 +63,7 @@ public class Settings extends AppCompatActivity {
         private static void releaseReminder(Preference preference) {
             preference.setOnPreferenceChangeListener((preferences, newValue) -> {
                 new ReleaseToday().setRepeatingAlarm(preferences.getContext(), ((boolean) newValue));
-                toasReminder(preference.getContext(), preference.getContext().getString(R.string.notifikasi_release_reminder), newValue);
+                toasReminder(preference.getContext(), preference.getContext().getString(R.string.notification_release_reminder), newValue);
                 return true;
             });
         }

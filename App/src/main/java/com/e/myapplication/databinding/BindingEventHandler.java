@@ -7,11 +7,11 @@ import androidx.navigation.NavDestination;
 
 import com.e.myapplication.R;
 import com.e.myapplication.ui.prefs.Settings;
-import com.e.myapplication.ui.search.Search;
+import com.e.myapplication.ui.search.SearchActivity;
 
 import static android.content.Intent.FLAG_ACTIVITY_NO_ANIMATION;
 import static androidx.navigation.Navigation.findNavController;
-import static com.e.myapplication.ui.search.Search.DATA_EXTRA;
+import static com.e.myapplication.ui.search.SearchActivity.DATA_EXTRA;
 
 public class BindingEventHandler {
 
@@ -23,7 +23,7 @@ public class BindingEventHandler {
     /* on clik toolbar */
     public void toolbarOnclick(View view) {
         NavDestination destination = findNavController(view.getRootView().findViewById(R.id.nav_host_fragment)).getCurrentDestination();
-        Intent intent = new Intent(view.getContext(), Search.class);
+        Intent intent = new Intent(view.getContext(), SearchActivity.class);
         intent.addFlags(FLAG_ACTIVITY_NO_ANIMATION);
 
         if (destination != null) {

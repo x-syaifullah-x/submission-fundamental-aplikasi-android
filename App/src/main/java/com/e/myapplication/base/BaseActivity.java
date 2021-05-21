@@ -5,22 +5,20 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.viewbinding.ViewBinding;
 
 import java.util.List;
 
-public abstract class BaseActivity<ActivityBinding extends ViewDataBinding> extends AppCompatActivity {
-    protected abstract int layoutRes();
+public abstract class BaseActivity<ActivityBinding extends ViewBinding> extends AppCompatActivity {
 
     protected ActivityBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, layoutRes());
+        setContentView(binding.getRoot());
     }
 
     /* Forward onActivityResult to fragment */

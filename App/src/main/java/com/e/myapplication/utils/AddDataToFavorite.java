@@ -62,7 +62,7 @@ public class AddDataToFavorite extends AsyncTask<ResultData, Void, String> {
                 if (id != 0) {
                     new FileOutputStream(mDir.getPath() + "/" + id).write(mBaos.toByteArray()); /* put file byte image to storage */
                     mCtx.get().sendBroadcast(new Intent(mCtx.get(), FavoriteWidget.class).setAction(ACTION_APPWIDGET_UPDATE));
-                    mResult = mCtx.get().getString(R.string.message_sucsses_add_to_favorite, type);
+                    mResult = mCtx.get().getString(R.string.message_success_add_to_favorite, type);
                 } else
                     mResult = mCtx.get().getString(R.string.message_data_ready, isEmpty(rd.toString()) ? rd.getOriginalName() : rd.getTitle());
             } catch (IOException | RuntimeException e) {

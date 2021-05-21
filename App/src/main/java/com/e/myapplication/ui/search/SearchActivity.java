@@ -4,21 +4,19 @@ import android.os.Bundle;
 
 import com.e.myapplication.R;
 import com.e.myapplication.base.BaseActivity;
-import com.e.myapplication.databinding.SearchBinding;
+import com.e.myapplication.databinding.ActivitySearchBinding;
 
 import static com.e.myapplication.ui.search.SearchData.TYPE;
 
-public class Search extends BaseActivity<SearchBinding> {
+public class SearchActivity extends BaseActivity<ActivitySearchBinding> {
     public static final String DATA_EXTRA = "DATA_EXTRA";
 
     @Override
-    protected int layoutRes() {
-        return R.layout.search;
-    }
-
-    @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        binding = ActivitySearchBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
+
         SearchData searchData = new SearchData();
         Bundle bundle = new Bundle();
         bundle.putString(TYPE, getIntent().getStringExtra(DATA_EXTRA));

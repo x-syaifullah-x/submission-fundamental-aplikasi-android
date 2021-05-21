@@ -95,7 +95,7 @@ public class SearchData extends Fragment implements OnItemClick<ViewHolderTv, Re
             @Override
             public boolean onQueryTextSubmit(String query) {
                 if (!"favorite".equals(type)) {
-                    Intent intent = new Intent(getContext(), SearchResult.class);
+                    Intent intent = new Intent(getContext(), SearchResultActivity.class);
                     intent.putExtra(DATA_EXTRA, type);
                     intent.putExtra(QUERY, query);
                     intent.setAction(ACTION_SEARCH);
@@ -121,7 +121,7 @@ public class SearchData extends Fragment implements OnItemClick<ViewHolderTv, Re
                         } else noData(query, getString(R.string.no_connection));
                     } else {
                         noData(query, "");
-                        binding.noData.setText(getString(R.string.search, type));
+                        binding.noData.setText(getString(R.string.search_with_param, type));
                     }
                 });
     }
@@ -130,7 +130,7 @@ public class SearchData extends Fragment implements OnItemClick<ViewHolderTv, Re
         adapter.setModel(new ArrayList<>());
         binding.progressBar.setVisibility(GONE);
         binding.noData.setVisibility(VISIBLE);
-        binding.noData.setText(getString(R.string.no_data, query.toUpperCase(), message));
+        binding.noData.setText(getString(R.string.no_data_with_param, query.toUpperCase(), message));
     }
 
     @Override

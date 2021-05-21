@@ -9,7 +9,7 @@ import com.e.myapplication.R;
 import com.e.myapplication.adapter.MovieTvAdapter;
 import com.e.myapplication.adapter.ViewHolderTv;
 import com.e.myapplication.base.BaseActivity;
-import com.e.myapplication.databinding.SearchResultBinding;
+import com.e.myapplication.databinding.ActivitySearchResultBinding;
 import com.e.myapplication.ui.movie_tv.MovieTvViewModel;
 
 import java.util.ArrayList;
@@ -20,15 +20,13 @@ import static android.view.View.VISIBLE;
 import static com.e.myapplication.ui.search.SearchData.DATA_EXTRA;
 import static java.util.Objects.requireNonNull;
 
-public class SearchResult extends BaseActivity<SearchResultBinding> {
-
-    @Override
-    protected int layoutRes() {
-        return R.layout.search_result;
-    }
+public class SearchResultActivity extends BaseActivity<ActivitySearchResultBinding> {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        binding = ActivitySearchResultBinding.inflate(getLayoutInflater());
+
         super.onCreate(savedInstanceState);
 
         overridePendingTransition(0, 0);

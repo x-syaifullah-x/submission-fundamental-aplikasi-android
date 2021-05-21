@@ -20,7 +20,7 @@
             setimage_detail="@{data.posterPath}"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:contentDescription="@string/content_descriptionimage"
+            android:contentDescription="@string/content_description_image"
             android:scaleType="fitXY"
             tools:src="@android:color/darker_gray" />
 

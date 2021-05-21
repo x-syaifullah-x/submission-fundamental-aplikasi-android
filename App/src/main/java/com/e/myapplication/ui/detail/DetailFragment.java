@@ -59,7 +59,7 @@ public class DetailFragment extends BaseFragment<DetailBinding> {
                         isEmpty(mData.toString()) ? mData.getOriginalName() : mData.getTitle(),
                         isEmpty(mData.toString()) ? getString(R.string.tv_show) : getString(R.string.movies)))
                 .setNegativeButton(getString(R.string.negative_button_cancel_favorite), null)
-                .setPositiveButton(getString(R.string.positive_botton_ok_favorite), (dialog, which) ->
+                .setPositiveButton(getString(R.string.positive_button_ok_favorite), (dialog, which) ->
                         new AddDataToFavorite(getView(), binding.posterDetail.getDrawable()).execute(binding.getData()))
                 .show());
     }

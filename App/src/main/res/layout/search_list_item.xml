@@ -22,7 +22,7 @@
             android:id="@+id/cv_img_search"
             android:layout_width="30dp"
             android:layout_height="20dp"
-            android:contentDescription="@string/content_descriptionimage"
+            android:contentDescription="@string/content_description_image"
             android:src="@drawable/ic_search"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

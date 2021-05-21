@@ -23,18 +23,14 @@ import static com.e.myapplication.R.id.detailFragment;
 import static com.e.myapplication.reminder.ReleaseToday.isFirst;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> implements NavController.OnDestinationChangedListener {
-    @Override
-    protected int layoutRes() {
-        return R.layout.activity_main;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
 
         binding.setClick(new BindingEventHandler());
 
-        /* set reminder pertama kali app di run*/
         if (isFirst(this)) {
             new ReleaseToday().setRepeatingAlarm(this, true);
             new Daily().setRepeatingAlarm(this, true);
@@ -59,7 +55,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements N
             binding.appBar.setExpanded(false);
             binding.bottomNavigationView.setVisibility(GONE);
         } else {
-            binding.toolbar.setTitle(getString(R.string.search, destination.getLabel()));
+            binding.toolbar.setTitle(getString(R.string.search_with_param, destination.getLabel()));
             binding.cvToolbarMain.setVisibility(VISIBLE);
             binding.appBar.setExpanded(true);
             binding.bottomNavigationView.setVisibility(VISIBLE);

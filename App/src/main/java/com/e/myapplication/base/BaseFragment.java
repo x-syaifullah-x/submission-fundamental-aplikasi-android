@@ -12,6 +12,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 
 public abstract class BaseFragment<FragmentBinding extends ViewDataBinding> extends Fragment {
+
     protected FragmentBinding binding;
 
     protected abstract int resFragmentLayout();

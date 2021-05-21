@@ -26,7 +26,7 @@ import static android.view.View.GONE;
 import static com.bumptech.glide.Glide.with;
 import static com.e.myapplication.BuildConfig.IMAGE_URL_ORIGINAL;
 import static com.e.myapplication.BuildConfig.IMAGE_URL_W185;
-import static com.e.myapplication.R.string.tidak_ada_bahasa_indonesia;
+import static com.e.myapplication.R.string.no_indonesia_language;
 import static com.e.myapplication.db.room.DatabaseContract.getUriImage;
 import static java.lang.Integer.parseInt;
 import static java.lang.String.valueOf;
@@ -57,7 +57,7 @@ public class BindingDataAdapter {
 
     @BindingAdapter({"overview"})
     public static void setOverview(TextView textView, String overview) {
-        textView.setText(!TextUtils.isEmpty(overview) ? overview : textView.getContext().getString(tidak_ada_bahasa_indonesia));
+        textView.setText(!TextUtils.isEmpty(overview) ? overview : textView.getContext().getString(no_indonesia_language));
     }
 
     @BindingAdapter({"setimage_detail"})

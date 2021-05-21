@@ -24,7 +24,7 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <activity
-            android:name=".ui.search.SearchResult"
+            android:name=".ui.search.SearchResultActivity"
             android:label="Result"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -46,7 +46,7 @@
         </receiver>
 
         <activity
-            android:name=".ui.search.Search"
+            android:name=".ui.search.SearchActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.app.default_searchable"

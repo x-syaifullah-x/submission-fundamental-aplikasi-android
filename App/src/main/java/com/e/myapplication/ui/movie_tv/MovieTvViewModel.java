@@ -25,7 +25,7 @@ public class MovieTvViewModel extends AndroidViewModel {
                     "discover",                                 /* discover or search        */
                     str[0],                                          /* tv or movie               */
                     THE_MOVIE_DB_API,                                /* api                       */
-                    getApplication().getString(R.string.laguage),                                            /* language                  */
+                    getApplication().getString(R.string.language),                                            /* language                  */
                     null,                                            /* query                     */
                     str.length > 1 ? str[1] : null,                  /* Date1                     */
                     str.length > 1 ? str[1] : null                   /* Date2                     */
@@ -39,7 +39,7 @@ public class MovieTvViewModel extends AndroidViewModel {
                 str[0],                                         /* discover or search        */
                 str[1],                                              /* tv or movie               */
                 THE_MOVIE_DB_API,                                    /* api                       */
-                getApplication().getString(R.string.laguage),                                                /* language                  */
+                getApplication().getString(R.string.language),                                                /* language                  */
                 str.length > 2 ? str[2] : null,                      /* query                     */
                 null,                                                /* Date1                     */
                 null                                                 /* Date2                     */

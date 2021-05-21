@@ -37,7 +37,7 @@ public class FavoriteAdapter extends BaseAdapter<FavoriteModel, ViewHolderFavori
                 .setCancelable(false)
                 .setPositiveButton(context.getString(R.string.confirm_delete_data_favorite), (dialog, which) ->
                         new DeleteDataFavorite(context, this, position).execute(model))
-                .setNegativeButton(context.getString(R.string.cencel_delete_data_favorite), null).show();
+                .setNegativeButton(context.getString(R.string.cancel_delete_data_favorite), null).show();
     }
 
     @Override
